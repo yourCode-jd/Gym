@@ -1,0 +1,27 @@
+{
+  "name": "gym-coach-dark-theme",
+  "version": "1.0.0",
+  "description": "A dark theme website for gym coaching.",
+  "main": "src/scripts/main.js",
+  "scripts": {
+    "build": "tailwindcss build src/styles/main.css -o public/styles.css",
+    "watch": "tailwindcss build src/styles/main.css -o public/styles.css --watch",
+    "start": "live-server public"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.0.0",
+    "gsap": "^3.0.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.0.0",
+    "autoprefixer": "^10.0.0"
+  },
+  "keywords": [
+    "gym",
+    "coach",
+    "dark-theme",
+    "website"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

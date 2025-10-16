@@ -1,0 +1,38 @@
+:root {
+    --primary: #2dda04;
+    --secondary: #2cb67d;
+    --background: #16161a;
+    --surface: #21212b;
+    --text-main: #fffffe;
+    --text-secondary: #a7a9be;
+    --accent: #2dda04;
+    --danger: #ff3864;
+    --font-main: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-main);
+    font-family: var(--font-main);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-main);
+}
+
+a {
+    color: var(--primary);
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+.border {
+    border-color: var(--surface);
+}
