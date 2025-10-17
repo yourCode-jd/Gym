@@ -60,3 +60,241 @@ a:hover {
 .bg-surface {
     background: var(--surface);
 }
+
+.category-card {
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+    transition: transform 280ms cubic-bezier(.2, .9, .2, 1), box-shadow 280ms ease;
+    will-change: transform, opacity;
+    opacity: 1;
+    overflow: hidden;
+    transform: translateY(0) scale(1);
+    cursor: pointer;
+}
+
+.category-card:hover::before {
+    transform: translateY(-100%);
+}
+
+.glass-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1px solid #3333551c;
+    transition: transform 320ms cubic-bezier(.2, .9, .2, 1), box-shadow 320ms ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+}
+
+/* media / hero image area */
+.card-media {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    display: block;
+    flex-shrink: 0;
+}
+
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.02);
+    transition: transform 700ms cubic-bezier(.2, .9, .2, 1);
+    filter: contrast(1.02) saturate(1.05);
+}
+
+/* body content */
+.card-body {
+    padding: 1.25rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    height: 100%;
+}
+
+.card-icon {
+    font-size: 2rem;
+}
+
+.card-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 0.3px;
+}
+
+.card-sub {
+    color: #333;
+    font-size: 0.95rem;
+    max-width: 16rem;
+}
+
+/* CTA button */
+.card-cta {
+    margin-top: 0.6rem;
+    appearance: none;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 400;
+    color: #333;
+    font-size: 14px;
+    background: linear-gradient(90deg, var(--primary), rgba(255, 255, 255, 0.85));
+    box-shadow: 0 8px 24px rgba(252, 7, 3, 0.12);
+    transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
+}
+
+.card-cta:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.03);
+}
+
+/* hover / focus interaction */
+.glass-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: -10px 10px 0 0px var(--primary);
+}
+
+.glass-card:focus-within {
+    transform: translateY(-6px);
+}
+
+/* image zoom on hover */
+.glass-card:hover .card-media img,
+.glass-card:focus-within .card-media img {
+    transform: scale(1.08);
+}
+
+/* Before / After compare slider */
+.compare-wrap {
+    --compare-percent: 50%;
+    position: relative;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.02));
+}
+
+/* base images */
+.compare-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* overlay after image width controlled by css var */
+.compare-after {
+    width: var(--compare-percent);
+    max-width: 100%;
+    height: 100%;
+    transition: width 0.35s cubic-bezier(.2, .9, .2, 1);
+    pointer-events: none;
+}
+
+/* handle appearance */
+.compare-handle {
+    left: calc(var(--compare-percent) - 18px);
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.86));
+    box-shadow: 0 8px 20px rgba(2, 6, 23, 0.45);
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    transform-origin: center;
+    transition: left 0.18s cubic-bezier(.2, .9, .2, 1);
+}
+
+/* small vertical bar inside handle */
+.compare-handle::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 16px;
+    margin: 10px auto 0;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 2px;
+}
+
+/* range input styling (invisible but usable) */
+.compare-range {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 28px;
+    background: transparent;
+}
+
+.compare-range:focus {
+    outline: none;
+}
+
+/* range thumb */
+.compare-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.compare-range::-moz-range-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* responsive height */
+@media (min-width: 768px) {
+    .compare-wrap {
+        height: 380px;
+    }
+}
+
+@media (max-width: 767px) {
+    .compare-wrap {
+        height: 260px;
+    }
+}
+
+/* ensure images fill container height */
+.compare-wrap .compare-img {
+    height: 100%;
+}
+
+/* responsive tweaks */
+@media (min-width: 768px) {
+    .card-media {
+        height: 180px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card-media {
+        height: 200px;
+    }
+}
+
+/* subtle entrance (so content doesn't feel static) */
+/* these are intentionally lightweight — GSAP/ScrollTrigger can override if present */
+.category-card {
+    opacity: 1;
+    transform: translateY(0);
+}

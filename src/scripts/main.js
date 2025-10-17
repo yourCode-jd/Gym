@@ -109,18 +109,98 @@ document.addEventListener("DOMContentLoaded", () => {
   navOverlay.addEventListener("click", closeDrawer);
 
   // ========== Animate category cards on scroll
+  // Register ScrollTrigger (safe guard)
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  // Smooth GSAP scroll animations for category cards (reverse on scroll back)
   gsap.utils.toArray(".category-card").forEach((card, i) => {
-    gsap.to(card, {
-      scrollTrigger: {
-        trigger: card,
-        start: "top 80%",
-        toggleActions: "play none none none",
-      },
-      opacity: 1,
-      y: 0,
-      duration: 0.7,
-      delay: i * 0.1,
-      ease: "power3.out",
-    });
+    gsap.fromTo(
+      card,
+      { opacity: 0, y: 40, scale: 0.98, rotateX: 8 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        rotateX: 0,
+        duration: 0.82,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 82%",
+          toggleActions: "play reverse none reverse", // play on enter, reverse on leave/enterBack
+          // markers: true, // uncomment to debug timing
+        },
+      }
+    );
   });
+
+  // Before/After compare slider control (clean, updates only CSS var)
+  (function () {
+    const wrap = document.querySelector(".compare-wrap");
+    if (!wrap) return;
+    const range = wrap.querySelector(".compare-range");
+    const handle = wrap.querySelector(".compare-handle");
+
+    // clamp helper
+    const clamp = (v, a = 0, b = 100) => Math.min(b, Math.max(a, v));
+
+    function setPercent(p) {
+      p = clamp(p);
+      // update only the CSS variable — CSS handles width & handle position
+      wrap.style.setProperty("--compare-percent", p + "%");
+      // keep range in sync
+      if (range) range.value = Math.round(p);
+    }
+
+    // range input control
+    if (range)
+      range.addEventListener("input", (e) => setPercent(e.target.value));
+
+    // click on wrapper to move slider
+    wrap.addEventListener("click", (e) => {
+      const rect = wrap.getBoundingClientRect();
+      const p = ((e.clientX - rect.left) / rect.width) * 100;
+      setPercent(p);
+    });
+
+    // drag support for handle (pointer events)
+    let dragging = false;
+    handle.style.touchAction = "none";
+    handle.addEventListener("pointerdown", (e) => {
+      dragging = true;
+      handle.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    });
+    window.addEventListener("pointermove", (e) => {
+      if (!dragging) return;
+      const rect = wrap.getBoundingClientRect();
+      const p = ((e.clientX - rect.left) / rect.width) * 100;
+      setPercent(p);
+    });
+    window.addEventListener("pointerup", (e) => {
+      if (!dragging) return;
+      dragging = false;
+      try {
+        handle.releasePointerCapture(e.pointerId);
+      } catch {}
+    });
+
+    // init (reads initial range value or default 50)
+    setPercent(range ? range.value : 50);
+  })();
+
+  // Initialize BeerSlider (before/after plugin)
+  try {
+    if (typeof BeerSlider !== "undefined") {
+      // read start from data-beer-start or default to 50
+      const el = document.getElementById("beer-slider");
+      if (el)
+        new BeerSlider(el, { start: parseInt(el.dataset.beerStart || 50, 10) });
+    }
+  } catch (err) {
+    // fail silently if plugin not loaded
+    // console.error("BeerSlider init error:", err);
+  }
 });

@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="../src/styles/variables.css" rel="stylesheet">
     <link href="../src/styles/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/beerslider/dist/BeerSlider.css">
 </head>
 
 <body class="text-white font-poppins">
@@ -63,35 +64,81 @@
         </section>
 
         <!-- Categories Section -->
-        <section class="relative z-10 py-16 bg-surface">
-            <div class="max-w-5xl mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-12 text-center font-poppins">Our Categories
+        <section class="relative z-10 py-16 bg-white">
+            <div class="max-w-screen-2xl mx-auto px-4">
+                <h2 class="text-xl md:text-6xl uppercase font-bold text-primary mb-12 text-center font-poppins">Our
+                    Categories
                 </h2>
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-                    <div
-                        class="category-card flex flex-col items-center bg-gradient-to-br from-[#232336] to-[#1a1a28] rounded-2xl p-8 shadow-2xl border border-[#35354a] hover:scale-105 hover:shadow-accent/40 transition-all duration-300 cursor-pointer opacity-0 translate-y-10">
-                        <div class="text-5xl mb-4 drop-shadow-lg">🏋️‍♂️</div>
-                        <h3 class="text-xl font-bold mb-2 text-white font-poppins tracking-wide">Personal Training</h3>
-                        <p class="text-gray-400 text-center">Customized 1-on-1 sessions to reach your fitness goals.
-                        </p>
-                    </div>
-                    <div
-                        class="category-card flex flex-col items-center bg-gradient-to-br from-[#232336] to-[#1a1a28] rounded-2xl p-8 shadow-2xl border border-[#35354a] hover:scale-105 hover:shadow-accent/40 transition-all duration-300 cursor-pointer opacity-0 translate-y-10">
-                        <div class="text-5xl mb-4 drop-shadow-lg">🥗</div>
-                        <h3 class="text-xl font-bold mb-2 text-white font-poppins tracking-wide">Nutrition Coaching</h3>
-                        <p class="text-gray-400 text-center">Personalized meal plans and nutrition advice.</p>
-                    </div>
-                    <div
-                        class="category-card flex flex-col items-center bg-gradient-to-br from-[#232336] to-[#1a1a28] rounded-2xl p-8 shadow-2xl border border-[#35354a] hover:scale-105 hover:shadow-accent/40 transition-all duration-300 cursor-pointer opacity-0 translate-y-10">
-                        <div class="text-5xl mb-4 drop-shadow-lg">⚖️</div>
-                        <h3 class="text-xl font-bold mb-2 text-white font-poppins tracking-wide">Weight Loss</h3>
-                        <p class="text-gray-400 text-center">Effective programs to help you lose weight safely.</p>
-                    </div>
-                    <div
-                        class="category-card flex flex-col items-center bg-gradient-to-br from-[#232336] to-[#1a1a28] rounded-2xl p-8 shadow-2xl border border-[#35354a] hover:scale-105 hover:shadow-accent/40 transition-all duration-300 cursor-pointer opacity-0 translate-y-10">
-                        <div class="text-5xl mb-4 drop-shadow-lg">❤️‍🔥</div>
-                        <h3 class="text-xl font-bold mb-2 text-white font-poppins tracking-wide">Cardio Exercise</h3>
-                        <p class="text-gray-400 text-center">Boost your stamina with our cardio routines.</p>
+                    <!-- Card 1 -->
+                    <article class="category-card glass-card">
+                        <div class="card-media">
+                            <img src="../src/assets/weight-loss.jpg" alt="Personal Training">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-icon">🏋️‍♂️</div>
+                            <h3 class="card-title">Personal Training</h3>
+                            <p class="card-sub">1-on-1 coaching tailored to your goals.</p>
+                            <button class="card-cta" type="button">Learn more</button>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="category-card glass-card">
+                        <div class="card-media">
+                            <img src="../src/assets/weight-loss.jpg" alt="Nutrition Coaching">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-icon">🥗</div>
+                            <h3 class="card-title">Nutrition Coaching</h3>
+                            <p class="card-sub">Personal meal plans & guidance.</p>
+                            <button class="card-cta" type="button">Learn more</button>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="category-card glass-card">
+                        <div class="card-media">
+                            <img src="../src/assets/weight-loss.jpg" alt="Weight Loss">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-icon">⚖️</div>
+                            <h3 class="card-title">Weight Loss</h3>
+                            <p class="card-sub">Safe, effective weight-loss programs.</p>
+                            <button class="card-cta" type="button">Learn more</button>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="category-card glass-card">
+                        <div class="card-media">
+                            <img src="../src/assets/weight-loss.jpg" alt="Cardio Exercise">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-icon">❤️‍🔥</div>
+                            <h3 class="card-title">Cardio Exercise</h3>
+                            <p class="card-sub">Boost endurance with tailored routines.</p>
+                            <button class="card-cta" type="button">Learn more</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Their Transformation (BeerSlider plugin) -->
+        <section class="py-16">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="text-xl md:text-6xl uppercase font-bold text-primary mb-12 text-center font-poppins">See
+                    Their <br> Transformation</h2>
+
+                <div class="mx-auto max-w-3xl rounded-xl overflow-hidden shadow-xl h-[650px]">
+                    <!-- BeerSlider markup: outer container with before image, inner .beer-reveal contains after image -->
+                    <div id="beer-slider" class="beer-slider h-full" data-beer-start="50">
+                        <img src="../src/assets/day60.png" alt="Before" />
+                        <div class="beer-reveal">
+                            <img src="../src/assets/day1.png" alt="After" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -103,6 +150,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
+    <!-- BeerSlider script (add before your main.js) -->
+    <script src="https://unpkg.com/beerslider/dist/BeerSlider.js"></script>
     <script src="../src/scripts/main.js"></script>
 </body>
 
