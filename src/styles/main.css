@@ -165,7 +165,7 @@ a:hover {
 /* hover / focus interaction */
 .glass-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: -10px 10px 0 0px var(--primary);
+    box-shadow: -4px 4px 0 0px var(--primary);
 }
 
 .glass-card:focus-within {
@@ -297,4 +297,32 @@ a:hover {
 .category-card {
     opacity: 1;
     transform: translateY(0);
+}
+
+@layer components {
+    .bg-surface {
+        background: var(--surface);
+    }
+
+    /* keep consistent if needed */
+
+    /* small utility for caption backdrop (used in new section) */
+    .backdrop-caption {
+        @apply inline-block bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-lg shadow-sm;
+    }
+
+    .newsletter-input {
+        @apply bg-white/6 text-white placeholder-white/60;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(6px);
+    }
+
+    .newsletter-btn {
+        @apply rounded-full;
+    }
+}
+
+/* small helper to show message */
+#newsletter-msg.show {
+    display: block;
 }

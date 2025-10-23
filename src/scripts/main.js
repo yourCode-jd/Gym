@@ -203,4 +203,31 @@ document.addEventListener("DOMContentLoaded", () => {
     // fail silently if plugin not loaded
     // console.error("BeerSlider init error:", err);
   }
+
+  // Newsletter form handler (simple client-side only)
+  const form = document.getElementById("newsletter-form");
+  const emailInput = document.getElementById("newsletter-email");
+  const msg = document.getElementById("newsletter-msg");
+
+  if (form && emailInput && msg) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = emailInput.value.trim();
+      if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+        msg.textContent = "Please enter a valid email address.";
+        msg.classList.add("show");
+        msg.classList.remove("text-green-400");
+        msg.classList.add("text-red-400");
+        return;
+      }
+
+      // TODO: replace with real API call
+      // simulate success
+      msg.textContent = "Thanks! Check your inbox to confirm subscription.";
+      msg.classList.add("show");
+      msg.classList.remove("text-red-400");
+      msg.classList.add("text-green-400");
+      form.reset();
+    });
+  }
 });

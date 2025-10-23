@@ -23,7 +23,7 @@
             </svg>
         </button>
         <!-- Navigation Drawer -->
-        <nav id="nav-drawer"
+        <!-- <nav id="nav-drawer"
             class="fixed top-0 left-0 h-full w-full bg-surface shadow-lg flex flex-col items-center justify-center z-40">
             <a href="#"
                 class="gsap-nav-link text-6xl text-primary font-medium uppercase font-poppins mb-8 hover:text-accent transition">Home</a>
@@ -33,11 +33,12 @@
                 class="gsap-nav-link text-6xl text-white font-medium uppercase font-poppins mb-8 hover:text-accent transition">Coaches</a>
             <a href="#"
                 class="gsap-nav-link text-6xl text-white font-medium uppercase font-poppins mb-8 hover:text-accent transition">Contact</a>
-        </nav>
+        </nav> -->
         <!-- Overlay -->
         <div id="nav-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden"></div>
     </header>
     <main>
+
         <section class="relative w-full h-[90vh] flex items-center justify-center overflow-hidden">
             <!-- Hero Video Banner -->
             <video class="absolute inset-0 w-full h-full object-cover" src="../src/assets/hero-banner.mp4" autoplay
@@ -125,6 +126,79 @@
                 </div>
             </div>
         </section>
+        <!-- Full Week Exercises (NEW) -->
+        <section class="py-16">
+            <div class="max-w-screen-2xl mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-primary mb-4 text-center font-poppins">Full Week
+                    Exercises
+                </h2>
+                <p class="text-center text-sm text-white/70 mb-8 max-w-2xl mx-auto">
+                    Follow this weekly routine — daily focus, clear progress. Tap each card to learn the movement.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                    <!-- Large feature image -->
+                    <figure class="relative md:col-span-1 rounded-xl overflow-hidden shadow-lg">
+                        <img src="../src/assets/nutrition-coaching.png" alt="Weekly full body workout"
+                            class="w-full h-[800px] object-cover object-top">
+                        <figcaption class="absolute left-4 bottom-4 text-left">
+                            <div
+                                class="inline-block bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold">Full Body Circuit</h3>
+                                <p class="text-sm text-white/80">45 min — Strength + Cardio</p>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <!-- Right column: stacked exercise cards -->
+                    <div class="flex flex-col gap-4">
+                        <article class="relative rounded-xl overflow-hidden shadow-md">
+                            <img src="../src/assets/exer-3.jpg" alt="Day 1 - Legs"
+                                class="w-full h-64 object-cover object-center">
+                            <div
+                                class=" bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-lg shadow-sm absolute w-full h-full left-0 bottom-0 text-left flex items-center justify-center flex-col">
+                                <h4 class="font-semibold text-lg text-white">Day 1 — Legs & Glutes</h4>
+                                <p class="text-sm text-white/70">Squats, lunges, deadlifts</p>
+                            </div>
+                        </article>
+
+                        <article class="relative rounded-xl overflow-hidden shadow-md">
+                            <img src="../src/assets/exer-3.jpg" alt="Day 2 - Upper"
+                                class="w-full h-64 object-cover object-center">
+                            <div
+                                class=" bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-lg shadow-sm absolute w-full h-full left-0 bottom-0 text-left flex items-center justify-center flex-col">
+                                <h4 class="font-semibold text-lg text-white">Day 2 — Upper Body</h4>
+                                <p class="text-sm text-white/70">Push, pull, shoulders</p>
+                            </div>
+                        </article>
+
+                        <article class="relative rounded-xl overflow-hidden shadow-md">
+                            <img src="../src/assets/exer-3.jpg" alt="Day 3 - Cardio"
+                                class="w-full h-64 object-cover object-center">
+                            <div
+                                class=" bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-lg shadow-sm absolute w-full h-full left-0 bottom-0 text-left flex items-center justify-center flex-col">
+                                <h4 class="font-semibold text-lg text-white">Day 3 — Cardio & Core</h4>
+                                <p class="text-sm text-white/70">Intervals and core work</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Large feature image -->
+                    <figure class="relative md:col-span-1 rounded-xl overflow-hidden shadow-lg">
+                        <img src="../src/assets/nutrition-coaching.png" alt="Weekly full body workout"
+                            class="w-full h-[800px] object-cover object-top">
+                        <figcaption class="absolute left-4 bottom-4 text-left">
+                            <div
+                                class="inline-block bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold">Full Body Circuit</h3>
+                                <p class="text-sm text-white/80">45 min — Strength + Cardio</p>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+        </section>
 
         <!-- See Their Transformation (BeerSlider plugin) -->
         <section class="py-16">
@@ -135,14 +209,54 @@
                 <div class="mx-auto max-w-3xl rounded-xl overflow-hidden shadow-xl h-[650px]">
                     <!-- BeerSlider markup: outer container with before image, inner .beer-reveal contains after image -->
                     <div id="beer-slider" class="beer-slider h-full" data-beer-start="50">
-                        <img src="../src/assets/day60.png" alt="Before" />
+                        <img src="../src/assets/after.png" alt="after" />
                         <div class="beer-reveal">
-                            <img src="../src/assets/day1.png" alt="After" />
+                            <img src="../src/assets/before.png" alt="before" />
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+
+        <!-- Newsletter / CTA -->
+        <section class="py-16">
+            <div class="max-w-screen-2xl mx-auto px-4">
+                <div class=" p-6 md:p-10 flex flex-col md:flex-row items-stretch gap-20 ">
+                    <!-- Left: form -->
+                    <div class="md:w-1/2 flex-1">
+                        <h3 class="text-6xl uppercase font-bold text-primary mb-3 font-poppins">Newsletter</h3>
+                        <p class="text-sm text-white mb-6">Get weekly tips, transformation stories and exclusive
+                            offers.</p>
+
+                        <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 ">
+                            <input id="newsletter-email" type="email" required placeholder="Your email address"
+                                class="newsletter-input w-full sm:flex-1 rounded-full px-4 py-3 bg-white/20 placeholder:text-white/60 text-white outline-none focus:ring-2 focus:ring-primary transition" />
+                            <button type="submit"
+                                class="newsletter-btn mt-1 sm:mt-0 inline-flex items-center justify-center rounded-full px-5 py-3  text-white bg-[#2dda04] font-semibold shadow-md ">
+                                Subscribe
+                            </button>
+                        </form>
+
+                        <p id="newsletter-msg" class="mt-3 text-sm text-white/60 hidden"></p>
+                    </div>
+
+                    <!-- Right: description -->
+                    <div class="md:w-1/2 flex-1 flex flex-col justify-center">
+                        <div class="">
+                            <h4 class="text-2xl font-semibold mb-4 text-white">Why subscribe?</h4>
+                            <ul class="list-inside list-disc text-base text-white space-y-3">
+                                <li>Exclusive training tips and nutrition guides.</li>
+                                <li>Real transformation stories and progress updates.</li>
+                                <li>Early access to programs and special discounts.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
     </main>
     <footer class="mt-20 text-center text-gray-500">
         <p>&copy; 2023 Gym Coach. All rights reserved.</p>
