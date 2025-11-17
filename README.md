@@ -1,6 +1,7 @@
 # CoreWave
 
 **Tagline:** “Find your flow, build your core.”
+
 Minimal, movement-first landing page emphasizing classes, benefits, and a fast sign-up funnel.
 
 ---
