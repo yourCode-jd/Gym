@@ -8,7 +8,7 @@ Minimal, movement-first landing page emphasizing classes, benefits, and a fast s
 
 ## 🚀 Github Demo
 
-[View Here](https://yourcode-jd.github.io/Gym/)
+[View Here](https://yourcode-jd.github.io/CoreWave/)
 
 ---
 
